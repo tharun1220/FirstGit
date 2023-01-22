@@ -20,12 +20,23 @@
 //  var header = document.getElementById('main-header');
 // console.log(headerTitle);
 //  header.style.borderBottom = 'solid 3px #000';
-//GET ELEMENTS BY CLASS NAME
-var items = document.getElementsByClassName('list-group-item');
-console.log(items);
-items[2].style.backgroundColor = 'green';
 
-for( var i=0; i<items.length; i++)
+//GET ELEMENTS BY CLASS NAME
+// var items = document.getElementsByClassName('list-group-item');
+// console.log(items);
+// items[2].style.backgroundColor = 'green';
+
+// for( var i=0; i<items.length; i++)
+// {
+//     items[i].style.fontWeight = 'bold';
+// }
+
+//GET ELEMENT BY TAG NAME
+var li = document.getElementsByClassName('li');
+console.log(li);
+li[2].style.backgroundColor = 'green';
+
+for( var i=0; i<li.length; i++)
 {
-    items[i].style.fontWeight = 'bold';
+    li[i].style.fontWeight = 'bold';
 }
