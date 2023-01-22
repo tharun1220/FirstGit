@@ -17,15 +17,15 @@
 //GET ELEMENT BY ID
 //console.log(document.getElementById('header-title'));
 // var headerTitle = document.getElementById('header-tile');
-// var header = document.getElementById('main-header');
+//  var header = document.getElementById('main-header');
 // console.log(headerTitle);
-// header.style.borderBottom = 'solid 3px #000';
+//  header.style.borderBottom = 'solid 3px #000';
 //GET ELEMENTS BY CLASS NAME
 var items = document.getElementsByClassName('list-group-item');
-//console.log(items);
-items[3].getElementsByClassName.backgroundColor = 'green';
+console.log(items);
+items[2].style.backgroundColor = 'green';
 
 for( var i=0; i<items.length; i++)
 {
-    items[i].getElementsByClassName.fontWeight = 'bold';
+    items[i].style.fontWeight = 'bold';
 }
