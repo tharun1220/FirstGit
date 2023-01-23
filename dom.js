@@ -47,10 +47,52 @@
 // thirdItem.style.color = 'white';
 
 //QUERY SELECTORALL
-var li = document.querySelectorAll('li');
-li[1].style.color = 'green';
-var odd = document.querySelectorAll('li:nth-child(odd)');
-for(var i = 0; i < odd.length; i++)
-{
-    odd[i].style.backgroundColor = 'green';
-}
+// var li = document.querySelectorAll('li');
+// li[1].style.color = 'green';
+// var odd = document.querySelectorAll('li:nth-child(odd)');
+// for(var i = 0; i < odd.length; i++)
+// {
+//     odd[i].style.backgroundColor = 'green';
+// }
+
+//TRAVERSING THE DOM
+ var itemList = document.querySelector('#items');
+//   //parentElement
+//   console.log(itemList.querySelector);
+//   itemList.parentElement.style.backgroundColor = '#f4f4f4';
+//   console.log(itemList.parentElement.parentElement.parentElement);
+
+//   //child nodes
+//   console.log(itemList.childNodes);
+//   //First child
+//   console.log(itemList.firstChild);
+//   //First element child
+//   console.log(itemList.firstElementChild);
+//   itemList.firstElementChild.textContent = 'Hello Item 1';
+//   //Last child
+//   console.log(itemList.lastChild);
+//   //last element child
+//   console.log(itemList.lastElementChild);
+//   //nextSibling
+//   console.log(itemList.nextSibling);
+//   //nextElementSibling
+//   console.log(itemList.nextElementSibling);
+//   //previousSibling
+//   console.log(itemList.previousSibling);
+//   //previousElementSibling
+//   console.log(itemList.previousElementSibling);
+
+//Create element
+//   //create a div
+//   var newDiv = document.createElement('div');
+//   //add class
+//   newDiv.className = 'hello';
+//   //add id
+//   newDiv.id = 'hello1';
+//   //add attr
+//   newDiv.setAttribute('title', 'Hello Div');
+//   //create text node
+//   var newDivText = document.createTextNode('Hello World');
+//   //add text to div
+//   newDiv.appendChild(newDivText);
+//   document.title = 'Hello Item Lister';
