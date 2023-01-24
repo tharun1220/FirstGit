@@ -56,7 +56,7 @@
 // }
 
 //TRAVERSING THE DOM
- var itemList = document.querySelector('#items');
+// var itemList = document.querySelector('#items');
 //   //parentElement
 //   console.log(itemList.querySelector);
 //   itemList.parentElement.style.backgroundColor = '#f4f4f4';
