@@ -25,7 +25,6 @@
         </div>
     </form>
     <ul id="listOfitems">
-        <li> tharun - tharun1220@gmail.com<input type="button" value="Delete" ></li>
     </ul>
 
    <script type="text/javascript">
@@ -48,6 +47,7 @@
          var parentElem = document.getElementById('listOfitems')
          var childElem = document.createElement('li')
          childElem.textContent = obj.name +'-'+ obj.email
+
          var delBtn = document.createElement('input')
          delBtn.type = 'button'
          delBtn.value = 'Delete'
@@ -55,7 +55,14 @@
             localStorage.removeItem('userdetails')
             parentElem.removeChild(childElem);
          }
-         childElem.appendChild(delBtn); 
+         var editBtn = document.createElement('input')
+         editBtn.type = 'button'
+         editBtn.value = 'Edit'
+         editBtn.onclick = () => {
+            parentElem.removeChild(childElem);
+         }
+         childElem.appendChild(delBtn);
+         childElem.appendChild(editBtn); 
          parentElem.appendChild(childElem);
          }
     </script>
