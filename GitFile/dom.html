@@ -24,6 +24,9 @@
             </div>
         </div>
     </form>
+    <ul id="listOfitems">
+        <li> tharun - tharun1220@gmail.com</li>
+    </ul>
 
    <script type="text/javascript">
    function saveToLocalStorage(event)
@@ -37,8 +40,16 @@
              name,
              email
      };
-    localStorage.setItem('user details',JSON.stringify(obj));
+    localStorage.setItem("userdetails",JSON.stringify(obj));
+    showUserOnScreen(obj);
  }
+  function showUserOnScreen(obj){
+         var parentElem = document.getElementById('listOfitems')
+         var childElem = document.createElement('li')
+         childElem.textContent = obj.name +'-'+ obj.email
+         parentElem.appendChild(childElem);
+         }
+
     </script>
 </body>
 </html>
