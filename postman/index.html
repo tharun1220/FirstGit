@@ -16,9 +16,9 @@
                 <h2 style="color:orange">Book an Appointment</h2>
                 <hr>
                 <label for="name">Name:</label><br>
-                <input type="text" name="name"> <br><br>
+                <input type="text" name="name" id="usernameInputTag"> <br><br>
                 <label for="email">Email:</label><br>
-                <input type="text" name="email"><br><br>
+                <input type="text" name="email" id="emailInputTag"><br><br>
                 <button class="btn" style="background-color:orange">Submit</button>  
             </div>
             </div>
@@ -67,7 +67,24 @@
  })
 
   function showUserOnScreen(obj){
-         var parentElem = document.getElementById('listOfitems')
+    /*user = {
+        _id:'',
+        name:'',
+        email:''
+    }
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    if(localStorage.getItem(user.email) !==null){
+        removeUserFromScreen(user.email)
+    }
+    const parentElem = document.getElementById('listOfitems')
+    const childElem = `<li id = ${user._id}> ${user.name} - ${user.email}
+                           <button onClick = deleteUser('${user._id}')> Delete userdetails </button>
+                           <button onClick = editUserDetails('${user._id}','${user.name}','${user.email}')> Edit userdetails </button>
+                           </li>`
+    parentElem.innerHTML = parentElem.innerHTML + childElem;
+*/
+    var parentElem = document.getElementById('listOfitems')
          var childElem = document.createElement('li')
          childElem.textContent = obj.name +'-'+ obj.email
 
@@ -75,19 +92,63 @@
          delBtn.type = 'button'
          delBtn.value = 'Delete'
          delBtn.onclick = () => {
-            localStorage.removeItem('userdetails')
-            parentElem.removeChild(childElem);
+            axios.delete(`https://crudcrud.com/api/c41b599babed4d98a2c4d63afa18e889/appointmentData/${obj._id}`)
+    .then((response) =>{
+        localStorage.removeItem('userdetails')
+        parentElem.removeChild(childElem)
+    })
+    .catch((err) =>{
+        console.log(err)
+    })
+
+            //localStorage.removeItem('userdetails')
+            //parentElem.removeChild(childElem);
          }
          var editBtn = document.createElement('input')
          editBtn.type = 'button'
          editBtn.value = 'Edit'
          editBtn.onclick = () => {
-            parentElem.removeChild(childElem);
+            axios.delete(`https://crudcrud.com/api/c41b599babed4d98a2c4d63afa18e889/appointmentData/${obj._id}`)
+    .then((response) =>{
+        localStorage.removeItem('userdetails')
+        parentElem.removeChild(childElem)
+        document.getElementById('usernameInputTag').value = obj.name;
+        document.getElementById('emailInputTag').value = obj.email;
+    })
+    .catch((err) =>{
+        console.log(err)
+    })
+
+            //localStorage.removeItem('userdetails')
+            //parentElem.removeChild(childElem);
          }
          childElem.appendChild(delBtn);
          childElem.appendChild(editBtn); 
          parentElem.appendChild(childElem);
-         }
+    
+  }
+/*  function editUserDetails(name,email){
+    document.getElementById('name').value = name;
+    document.getElementById('email').value = email;
+    deleteUser(email)
+  }
+  function deleteUser(userId){
+    axios.delete(`https://crudcrud.com/api/c41b599babed4d98a2c4d63afa18e889/appointmentData/${userId}`)
+    .then((response) =>{
+        removeUserFromScreen(userId)
+    })
+    .catch((err) =>{
+        console.log(err)
+    })
+  }
+  
+  function removeUserFromScreen(userId){
+    const parentElem = document.getElementById('listOfusers')
+    const childElemToBeDeleted = document.getElementById(userId)
+    if(childElemToBeDeleted){
+        parentElem.removeChild(childElemToBeDeleted)
+    }
+  }*/
     </script>
 </body>
 </html>
